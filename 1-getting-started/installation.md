@@ -87,5 +87,5 @@ choco install graphviz
 
 ## Next Steps
 
-[Create Your First Azure Diagram](1-getting-started/first-diagram.md)
-[Azure-Specific Styling Guide](3-advanced-techniques/styling-guide.md)
+- [Create Your First Azure Diagram](1-getting-started/first-diagram.md)
+- [Azure-Specific Styling Guide](3-advanced-techniques/styling-guide.md)
