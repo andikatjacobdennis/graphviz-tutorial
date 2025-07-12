@@ -48,6 +48,7 @@ choco install graphviz
 1. Install [VS Code](https://code.visualstudio.com/download).  
 2. Open Extensions (`Ctrl+Shift+X`) and install:  
    - Graphviz Preview (by EFanZh)
+   - Markdown Preview Enhanced (by Yiyi Wang)
 
 3. Create a `.dot` file and click on preview button on top right to preview diagrams.  
 
