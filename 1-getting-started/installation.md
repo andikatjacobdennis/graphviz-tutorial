@@ -1,7 +1,5 @@
 # Graphviz Installation Guide for Windows 11
 
-*For Azure Architecture Diagrams*  
-
 ## Method 1: Standard Installation (Recommended)
 
 ### Step 1: Download Graphviz

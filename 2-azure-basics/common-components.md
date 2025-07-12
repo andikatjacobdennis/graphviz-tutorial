@@ -1,7 +1,5 @@
 # Azure Common Components in Graphviz  
 
-## Templates for Key Azure Services
-
 ## 1. Networking Components
 
 ### Virtual Network with Subnets
