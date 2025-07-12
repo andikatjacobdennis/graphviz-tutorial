@@ -58,15 +58,21 @@ choco install graphviz
 
    ```dot
    digraph AzureDemo {
-      rankdir="LR";
-      node [shape=box3d, color=blue];
-      
-      User [shape=oval, label="Azure AD User"];
-      WebApp [label="App Service"];
-      SQL [shape=cylinder, label="Azure SQL DB"];
-      
-      User -> WebApp [label="HTTPS"];
-      WebApp -> SQL [label="Connection String"];
+      rankdir=LR;
+
+      // Global styling
+      graph [fontname="Segoe UI", fontsize=10];
+      node  [fontname="Segoe UI", fontsize=9, penwidth=1.2];
+      edge  [fontname="Segoe UI", fontsize=8, color="#505050", fontcolor="black"];
+
+      // Nodes
+      User    [shape=oval,     label="Azure AD User", style=filled, fillcolor="#0078D4", fontcolor=white];
+      WebApp  [shape=box3d,    label="App Service",   style=filled, fillcolor="#0078D4", fontcolor=white];
+      SQL     [shape=cylinder, label="Azure SQL DB",  style=filled, fillcolor="#E5E5E5", color="#0078D4", fontcolor=black];
+
+      // Edges
+      User   -> WebApp [label="HTTPS"];
+      WebApp -> SQL    [label="Connection String"];
    }
    ```  
 

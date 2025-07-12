@@ -21,15 +21,18 @@ A step-by-step tutorial for creating professional Azure architecture diagrams us
 
 ## Example Diagrams
 
-Explore our [examples folder](/examples) with:
-
 - [Advanced Azure Architecture with Graphviz](/examples/cloud-architecture.md)
 - [Three-Tier Architecture](/examples/three-tier-architecture.md)
+- [Class Diagram](/examples/class-diagram.md)
 
 ## Resources
 
 - [Azure Icon Templates](/resources/azure-icons.dot)
 
-## Contributing
+## License
 
-Contributions welcome! Please see our contribution guidelines...
+This project is licensed under the [MIT License](LICENSE).
+
+## Contributions
+
+Pull requests welcome! Feel free to open issues or suggest features.
