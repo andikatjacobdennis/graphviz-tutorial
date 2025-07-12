@@ -46,7 +46,6 @@ digraph LBDiagram {
 }
 ```
 
----
 
 ## 2. Compute Services
 
@@ -74,7 +73,6 @@ digraph AKS {
 }
 ```
 
----
 
 ## 3. Storage & Databases
 
@@ -83,28 +81,35 @@ digraph AKS {
 ```dot
 digraph StorageExample {
     rankdir=LR;
-    
-    App -> {
-        Blob [shape=folder, label="Blob Storage"],
-        Queue [shape=box, label="Queue"],
-        Table [shape=plaintext, label="Table"]
-    };
+
+    // Edges
+    App -> { Blob Queue Table };
+
+    // Node definitions with attributes
+    Blob  [shape=folder, label="Blob Storage"];
+    Queue [shape=box, label="Queue"];
+    Table [shape=plaintext, label="Table"];
 }
+
 ```
 
 ### Database Tier
 
 ```dot
 digraph DatabaseTier {
-    App -> {
-        SQL [shape=cylinder, label="Azure SQL"],
-        Cosmos [shape=cylinder, label="Cosmos DB"],
-        PostgreSQL [shape=cylinder, label="Flexible Server"]
-    };
+    rankdir=LR;
+
+    // Edges
+    App -> { SQL Cosmos PostgreSQL };
+
+    // Node styling
+    SQL        [shape=cylinder, label="Azure SQL"];
+    Cosmos     [shape=cylinder, label="Cosmos DB"];
+    PostgreSQL [shape=cylinder, label="Flexible Server"];
 }
+
 ```
 
----
 
 ## 4. Security Components
 
@@ -129,7 +134,6 @@ digraph PrivateLink {
 }
 ```
 
----
 
 ## 5. Complete Azure Architecture
 
@@ -164,7 +168,6 @@ digraph FullArchitecture {
 }
 ```
 
----
 
 ## Best Practices
 

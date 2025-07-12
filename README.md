@@ -23,14 +23,12 @@ A step-by-step tutorial for creating professional Azure architecture diagrams us
 
 Explore our [examples folder](/examples) with:
 
-- [Basic Diagrams](/examples/basic)
-- [Intermediate Diagrams](/examples/intermediate)
-- [Advanced Patterns](/examples/advanced)
+- [Advanced Azure Architecture with Graphviz](/examples/cloud-architecture.md)
+- [Three-Tier Architecture](/examples/three-tier-architecture.md)
 
 ## Resources
 
 - [Azure Icon Templates](/resources/azure-icons.dot)
-- [Windows-Specific Tips](/resources/windows-tips.md)
 
 ## Contributing
 
