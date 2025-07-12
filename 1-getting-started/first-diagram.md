@@ -85,57 +85,34 @@ digraph Shapes {
 ### Edges (Connections)  
 
 ```dot
-digraph Connections {
-    //rankdir=LR;
-    node [shape=ellipse, style=filled, fillcolor="#e6f2ff"];
-    
-    // Standard edge
-    A -> B [label="Standard"];
-    
-    // Colored edge
-    A -> C [label="Red", color=red];
+digraph EdgeTypes {
+    rankdir=LR;
+    node [shape=ellipse, style=filled, fillcolor="#e6f2ff", fontsize=10];
 
-    // Bold edge
-    A -> D [label="Bold", style=bold];
+    A1 -> B1 [label="Standard"];
+    A2 -> B2 [label="Red", color=red];
 
-    // Dashed edge
-    A -> E [label="Dashed", style=dashed];
+    A3 -> B3 [label="Bold", style=bold];
+    A4 -> B4 [label="Dashed", style=dashed];
+    A5 -> B5 [label="Dotted", style=dotted];
+    A6 -> B6 [label="Thick", penwidth=3];
+    A7 -> B7 [label="Invisible", style=invis];
 
-    // Dotted edge
-    A -> F [label="Dotted", style=dotted];
+    A8  -> B8  [label="Arrow: normal", arrowhead=normal];
+    A9  -> B9  [label="Arrow: vee", arrowhead=vee];
+    A10 -> B10 [label="Arrow: diamond", arrowhead=diamond];
+    A11 -> B11 [label="Arrow: box", arrowhead=box];
+    A12 -> B12 [label="Arrow: crow", arrowhead=crow];
+    A13 -> B13 [label="Arrow: tee", arrowhead=tee];
+    A14 -> B14 [label="Arrow: dot", arrowhead=dot];
+    A15 -> B15 [label="Arrow: inv", arrowhead=inv];
 
-    // Thick edge
-    A -> G [label="Thick", penwidth=3];
-
-    // Invisible edge
-    A -> H [label="Invisible", style=invis];
-
-    // Arrowhead variations
-    A -> I [label="Arrow: normal", arrowhead=normal];
-    A -> J [label="Arrow: vee", arrowhead=vee];
-    A -> K [label="Arrow: diamond", arrowhead=diamond];
-    A -> L [label="Arrow: box", arrowhead=box];
-    A -> M [label="Arrow: crow", arrowhead=crow];
-    A -> N [label="Arrow: tee", arrowhead=tee];
-    A -> O [label="Arrow: dot", arrowhead=dot];
-    A -> P [label="Arrow: inv", arrowhead=inv];
-
-    // Double arrows (both directions)
-    A -> Q [label="Both", dir=both, arrowhead=normal, arrowtail=vee];
-
-    // No arrowhead
-    A -> R [label="None", arrowhead=none];
-
-    // Tailed edge
-    A -> S [label="Tail Arrow", dir=back, arrowtail=diamond];
-
-    // Colored arrowhead
-    A -> T [label="Colored Arrow", color=blue, fontcolor=blue, arrowhead=vee];
-
-    // Curved edge with constraint
-    A -> U [label="Constraint=false", constraint=false, style=dashed];
+    A16 -> B16 [label="Both", dir=both, arrowhead=normal, arrowtail=vee];
+    A17 -> B17 [label="None", arrowhead=none];
+    A18 -> B18 [label="Tail Arrow", dir=back, arrowtail=diamond];
+    A19 -> B19 [label="Colored Arrow", color=blue, fontcolor=blue, arrowhead=vee];
+    A20 -> B20 [label="Constraint=false", constraint=false, style=dashed];
 }
-
 ```
 
 ## 3. Common Errors & Fixes  
