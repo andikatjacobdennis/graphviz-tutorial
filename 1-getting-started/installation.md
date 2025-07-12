@@ -47,9 +47,9 @@ choco install graphviz
 
 1. Install [VS Code](https://code.visualstudio.com/download).  
 2. Open Extensions (`Ctrl+Shift+X`) and install:  
-   - Graphviz (dot) language support  (by Stephanvs)  
+   - Graphviz Preview (by EFanZh)
 
-3. Create a `.dot` file and use `Ctrl+Shift+V` to preview diagrams.  
+3. Create a `.dot` file and click on preview button on top right to preview diagrams.  
 
 ## Step 5: Test with an Azure Diagram
 
