@@ -85,8 +85,3 @@ choco install graphviz
 | `dot` not recognized | Reboot or manually add `C:\Program Files\Graphviz\bin` to [PATH](https://www.architectryan.com/2018/03/17/add-to-the-path-on-windows-10/). |  
 | VS Code preview not working | Ensure the Graphviz extension is active. |  
 | Broken arrows/layouts | Update to the latest Graphviz version. |  
-
-## Next Steps
-
-- [Create Your First Azure Diagram](1-getting-started/first-diagram.md)
-- [Azure-Specific Styling Guide](3-advanced-techniques/styling-guide.md)
