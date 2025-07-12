@@ -38,8 +38,7 @@ digraph Connections {
     A -> B [label="HTTP"]; 
     A -> C [label="SQL" color="red"];
 }
-```  
-
+```
 
 ## 3. Your First Flow Diagram  
 

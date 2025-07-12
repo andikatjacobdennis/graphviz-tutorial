@@ -6,15 +6,25 @@
 
 ```dot
 digraph BrandColors {
-    // Azure Blue
-    AppService [fillcolor="#0078D4", style=filled, fontcolor=white];
-    
-    // Complementary Colors
-    Storage [fillcolor="#0078D4", gradientangle=270, style="filled,radial"];
-    SQL [fillcolor="#E5E5E5", color="#0078D4", style=filled];
-    
-    // Security Elements
-    Firewall [fillcolor="#D83B01", style=filled, fontcolor=white];
+    rankdir=LR;
+    splines=ortho;
+
+    // Global styling
+    graph [fontname="Segoe UI", fontsize=10];
+    node  [fontname="Segoe UI", fontsize=9, penwidth=1.2];
+    edge  [fontname="Segoe UI", fontsize=8, penwidth=1.0, color="#505050", fontcolor="black"];
+
+    // App Service - Azure Blue
+    AppService [label="App Service", shape=box3d, style=filled, fillcolor="#0078D4", fontcolor=white];
+
+    // Storage with Azure brand blue gradient
+    Storage [label="Blob Storage", shape=folder, style="filled,radial", fillcolor="#0078D4", gradientangle=270, fontcolor=white];
+
+    // SQL DB with official light fill and border
+    SQL [label="Azure SQL DB", shape=cylinder, style=filled, fillcolor="#E5E5E5", color="#0078D4", fontcolor=black];
+
+    // Azure Firewall - Security red
+    Firewall [label="Azure Firewall", shape=doubleoctagon, style=filled, fillcolor="#D83B01", fontcolor=white];
 }
 ```  
 
@@ -33,20 +43,28 @@ Color Reference:
 
 ```dot
 digraph NodeStyles {
-    // Compute
-    VM [shape=box3d, label="Azure VM"];
-    AKS [shape=note, label="AKS Cluster"];
-    
-    // Data
-    CosmosDB [shape=cylinder, label="Cosmos DB\n(SQL API)"];
-    Blob [shape=folder, label="Blob Storage"];
-    
-    // Networking
-    VNet [shape=box, style="rounded,filled", fillcolor="#F3F2F1"];
-    LB [shape=pentagon];
-    
-    // Security
-    KeyVault [shape=octagon, color="#D83B01"];
+    rankdir=LR;
+    splines=ortho;
+
+    // Global styles
+    graph [fontname="Segoe UI", fontsize=10];
+    node  [fontname="Segoe UI", fontsize=9, penwidth=1.2];
+    edge  [fontname="Segoe UI", fontsize=8, penwidth=1.0, color="#505050", fontcolor="black"];
+
+    // Compute nodes
+    VM  [label="Azure VM", shape=box3d, style=filled, fillcolor="#0078D4", fontcolor=white];
+    AKS [label="AKS Cluster", shape=note, style=filled, fillcolor="#0078D4", fontcolor=white];
+
+    // Data nodes
+    CosmosDB [label="Cosmos DB\n(SQL API)", shape=cylinder, style=filled, fillcolor="#E5E5E5", color="#0078D4", fontcolor=black];
+    Blob     [label="Blob Storage", shape=folder, style=filled, fillcolor="#E5E5E5", color="#0078D4", fontcolor=black];
+
+    // Networking nodes
+    VNet [label="Virtual Network", shape=box, style="rounded,filled", fillcolor="#F3F2F1", color="#0078D4", fontcolor=black];
+    LB   [label="Load Balancer", shape=pentagon, style=filled, fillcolor="#F3F2F1", color="#0078D4", fontcolor=black];
+
+    // Security node
+    KeyVault [label="Key Vault", shape=octagon, style=filled, fillcolor="#FFD6D6", color="#D83B01", fontcolor=black];
 }
 ```
 
@@ -63,17 +81,26 @@ Shape Convention:
 
 ```dot
 digraph ConnectionTypes {
-    // Standard connection
-    App -> SQL [label="SQL 1433", fontsize=8];
-    
-    // Private link
-    App -> PE [label="Private Endpoint", style=dotted, dir=both];
-    
-    // Blocked traffic
-    Hacker -> SQL [label="Deny", color="#D83B01", style=dashed];
-    
-    // High volume
-    Users -> App [label="HTTP/2", penwidth=2];
+    rankdir=LR;
+    splines=ortho;
+
+    // Global styles
+    graph [fontname="Segoe UI", fontsize=10];
+    node  [fontname="Segoe UI", fontsize=9, penwidth=1.2];
+    edge  [fontname="Segoe UI", fontsize=8, penwidth=1.0, color="#505050", fontcolor="black"];
+
+    // Nodes
+    App     [label="App Service", shape=box3d, style=filled, fillcolor="#0078D4", fontcolor=white];
+    SQL     [label="Azure SQL DB", shape=cylinder, style=filled, fillcolor="#E5E5E5", color="#0078D4"];
+    PE      [label="Private Endpoint", shape=note, style=filled, fillcolor="#FFF4CE", color="#D83B01", fontcolor=black];
+    Hacker  [label="Untrusted Source", shape=oval, style=dashed, color="#D83B01"];
+    Users   [label="Users", shape=oval];
+
+    // Edges
+    App -> SQL     [label="SQL 1433"];
+    App -> PE      [label="Private Endpoint", style=dotted, dir=both, color="#0078D4"];
+    Hacker -> SQL  [label="Deny", color="#D83B01", style=dashed];
+    Users -> App   [label="HTTP/2", penwidth=2];
 }
 ```
 
@@ -120,14 +147,26 @@ Pro Tips:
 
 ```dot
 digraph Layout {
+    rankdir=TB;
+    
     // Global settings
-    graph [nodesep=0.5, ranksep=1.2];
-    
-    // Force alignment
-    {rank=same; WebApp; FunctionApp;}
-    
-    // Minimize edge crossings
-    AppService -> {SQL, Redis, Blob} [constraint=false];
+    graph [fontname="Segoe UI", fontsize=10, nodesep=0.5, ranksep=1.2];
+    node  [fontname="Segoe UI", fontsize=9, penwidth=1.2];
+    edge  [fontname="Segoe UI", fontsize=8, penwidth=1.0, color="#505050"];
+
+    // Node definitions with Azure-style shapes and colors
+    WebApp      [label="Web App", shape=box3d, style=filled, fillcolor="#0078D4", fontcolor=white];
+    FunctionApp [label="Function App", shape=box3d, style=filled, fillcolor="#0078D4", fontcolor=white];
+    AppService  [label="App Service", shape=box3d, style=filled, fillcolor="#0078D4", fontcolor=white];
+    SQL         [label="Azure SQL DB", shape=cylinder, style=filled, fillcolor="#E5E5E5", color="#0078D4"];
+    Redis       [label="Azure Cache\nfor Redis", shape=cylinder, style=filled, fillcolor="#E5E5E5", color="#0078D4"];
+    Blob        [label="Blob Storage", shape=folder, style=filled, fillcolor="#E5E5E5", color="#0078D4"];
+
+    // Force alignment of components on the same horizontal level
+    { rank = same; WebApp; FunctionApp }
+
+    // Edge connections
+    AppService -> {SQL Redis Blob} [constraint=false];
 }
 ```
 
@@ -142,27 +181,32 @@ dot -Gnodesep=1.0 -Gsplines=ortho -Tpng input.dot -o output.png
 
 ```dot
 digraph StyledArch {
+    rankdir=LR;
+
     // Global styles
-    graph [fontname="Segoe UI"];
-    node [fontname="Segoe UI", fontsize=10];
-    edge [fontname="Segoe UI", fontsize=8];
-    
+    graph [fontname="Segoe UI", fontsize=10];
+    node  [fontname="Segoe UI", fontsize=10, penwidth=1.2];
+    edge  [fontname="Segoe UI", fontsize=8, color="#505050", penwidth=1.0];
+
     // Components
-    User [shape=oval];
-    WebApp [shape=box3d, fillcolor="#0078D4", style=filled, fontcolor=white];
-    SQL [shape=cylinder, fillcolor="#E5E5E5", style=filled];
-    
+    User   [shape=oval, label="User"];
+    WebApp [shape=box3d, label="App Service", style=filled, fillcolor="#0078D4", fontcolor="white"];
+    SQL    [shape=cylinder, label="Azure SQL DB", style=filled, fillcolor="#E5E5E5", color="#0078D4", fontcolor="black"];
+
     // Connections
-    User -> WebApp [label="HTTPS", color="#505050"];
+    User -> WebApp [label="HTTPS"];
     WebApp -> SQL [label="Encrypted", style=dashed];
-    
+
     // Legend
     subgraph cluster_legend {
         label="Legend";
         style=dashed;
-        
-        Allow [shape=plaintext, label="Allow: Solid line"];
-        Encrypt [shape=plaintext, label="Encrypted: Dashed line"];
+        fontsize=10;
+        labelloc="t";
+        fontname="Segoe UI";
+
+        Allow   [shape=plaintext, label="▶ Solid line = Standard traffic"];
+        Encrypt [shape=plaintext, label="▶ Dashed line = Encrypted traffic"];
     }
 }
 ```

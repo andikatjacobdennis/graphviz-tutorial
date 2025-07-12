@@ -1,6 +1,6 @@
 # Graphviz Tutorial for Azure Architects (Windows 11)
 
-![Sample Azure Diagram](examples/basic/web-app-db.png)
+![Sample Azure Diagram](examples/cloud-architecture.svg)
 
 A step-by-step tutorial for creating professional Azure architecture diagrams using Graphviz on Windows 11.
 
@@ -16,7 +16,7 @@ A step-by-step tutorial for creating professional Azure architecture diagrams us
 
 3. **Advanced Techniques**
    - [Styling Guide](3-advanced-techniques/styling-guide.md)
-   - [Using Subgraphs](3-advanced-techniques/subgraphs.md)
+   - [Subgraphs](3-advanced-techniques/subgraphs.md)
    - [Automation Tips](3-advanced-techniques/automation.md)
 
 ## Example Diagrams
